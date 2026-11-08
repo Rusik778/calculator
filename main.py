@@ -1,16 +1,17 @@
-from calc import add, sub, mul, div, power
+from calc import add, sub, mul, div, power, percent
 
 
 def main():
     while True:
         print("\n1 — додати; 2 — відняти; 3 — помножити; 4 — поділити")
         print("5 — піднести до степеня")
+        print("6 — обчислити відсоток від числа")
         print("0 — вихід")
         choice = input("Оберіть дію: ").strip()
         if choice == "0":
             print("Роботу завершено.")
             break
-        if choice not in ('1', '2', '3', '4', '5'):
+        if choice not in ('1', '2', '3', '4', '5', '6'):
             print("Невідома дія.")
             continue
         try:
@@ -29,6 +30,8 @@ def main():
             result = div(a, b)
         elif choice == "5":
             result = power(a, b)
+        elif choice == "6":
+            result = percent(a, b)
         if result is None:
             print("Дію не визначено: перевірте ділення на нуль або степінь.")
         else:

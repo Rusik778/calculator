@@ -29,3 +29,8 @@ def power(x, n=2):
         return x ** n
     except OverflowError:
         return None
+
+
+def percent(value, rate):
+    """Повертає rate відсотків від value: 15% від 200 дорівнює 30."""
+    return value * rate / 100
