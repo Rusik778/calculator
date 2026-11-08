@@ -1,15 +1,16 @@
-from calc import add, sub, mul, div
+from calc import add, sub, mul, div, power
 
 
 def main():
     while True:
         print("\n1 — додати; 2 — відняти; 3 — помножити; 4 — поділити")
+        print("5 — піднести до степеня")
         print("0 — вихід")
         choice = input("Оберіть дію: ").strip()
         if choice == "0":
             print("Роботу завершено.")
             break
-        if choice not in ('1', '2', '3', '4'):
+        if choice not in ('1', '2', '3', '4', '5'):
             print("Невідома дія.")
             continue
         try:
@@ -26,6 +27,8 @@ def main():
             result = mul(a, b)
         elif choice == "4":
             result = div(a, b)
+        elif choice == "5":
+            result = power(a, b)
         if result is None:
             print("Дію не визначено: перевірте ділення на нуль або степінь.")
         else:
